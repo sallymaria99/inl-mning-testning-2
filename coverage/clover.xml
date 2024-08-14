@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723642062156" clover="3.2.0">
-  <project timestamp="1723642062156" name="All files">
-    <metrics statements="18" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="3" elements="27" coveredelements="10" complexity="0" loc="18" ncloc="18" packages="2" files="3" classes="3"/>
+<coverage generated="1723661671921" clover="3.2.0">
+  <project timestamp="1723661671921" name="All files">
+    <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9" elements="27" coveredelements="27" complexity="0" loc="18" ncloc="18" packages="2" files="3" classes="3"/>
     <package name="src">
-      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="App.tsx" path="/Users/sallystenegard/Desktop/inlämning testning 2/src/App.tsx">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="15" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
       <file name="BookingForm.tsx" path="/Users/sallystenegard/Desktop/inlämning testning 2/src/components/BookingForm.tsx">
-        <metrics statements="15" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
       </file>
       <file name="BookingList.tsx" path="/Users/sallystenegard/Desktop/inlämning testning 2/src/components/BookingList.tsx">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

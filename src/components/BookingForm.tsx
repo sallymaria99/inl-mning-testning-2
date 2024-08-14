@@ -41,6 +41,7 @@ export default function BookingForm({ addBooking }: BookingFormProps) {
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
+          placeholder="Datum"
         />
         <input
           type="text"
