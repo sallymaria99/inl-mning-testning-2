@@ -21,8 +21,8 @@ describe("BookingList", () => {
     render(<BookingList bookings={bookings} />);
 
     expect(screen.getByText("Sally Stenegärd")).toBeVisible();
-    expect(screen.getByText("Massage")).toBeVisible();
+    expect(screen.getByText("Massage på 2024-09-01")).toBeVisible();
     expect(screen.getByText("Samuel")).toBeVisible();
-    expect(screen.getByText("Konsert")).toBeVisible();
+    expect(screen.getByText("Konsert på 2025-09-02")).toBeVisible();
   });
 });

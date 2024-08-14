@@ -15,7 +15,10 @@ export default function BookingList({ bookings }: BookingListProps) {
       <ul>
         {bookings.map((booking, index) => (
           <li key={index}>
-            <strong>{booking.name}</strong> - {booking.type} på {booking.date}{" "}
+            <strong>{booking.name}</strong> -{" "}
+            <span>
+              {booking.type} på {booking.date}
+            </span>
             <br />
             {booking.description}
           </li>
