@@ -1,15 +1,26 @@
 import { useState } from "react";
 
-export default function BookingForm() {
-  const [name, setNamne] = useState("");
+type Booking = {
+  name: string;
+  date: string;
+  type: string;
+  description: string;
+};
+
+type BookingFormProps = {
+  addBooking: (booking: Booking) => void;
+};
+
+export default function BookingForm({ addBooking }: BookingFormProps) {
+  const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    addBoking({ name, date, type, description });
-    setNamne("");
+    addBooking({ name, date, type, description });
+    setName("");
     setDate("");
     setType("");
     setDescription("");
@@ -22,12 +33,27 @@ export default function BookingForm() {
           type="text"
           placeholder="Namn"
           value={name}
-          onChange={(e) => setNamne(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           required
         />
-        <input type="date" placeholder="Datum" />
-        <input type="text" placeholder="Typ av bokning" />
-        <input type="text" placeholder="Beskrivning" />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Typ av bokning"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          required
+        />
+        <textarea
+          placeholder="Beskrivning"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
         <button type="submit">Boka</button>
       </form>
     </>
