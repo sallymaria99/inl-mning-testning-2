@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import BookingList from "./BookingList";
 
 describe("BookingList", () => {
-  it("should render a list of bookings", () => {
+  it("should render a list of bookings with cancel button", () => {
     const bookings = [
       {
         name: "Sally Stenegärd",
@@ -18,11 +18,32 @@ describe("BookingList", () => {
         description: "Bob Dylan på Ullevi",
       },
     ];
-    render(<BookingList bookings={bookings} />);
+
+    const handleCancel = vi.fn();
+    render(<BookingList bookings={bookings} onCancel={handleCancel} />);
 
     expect(screen.getByText("Sally Stenegärd")).toBeVisible();
     expect(screen.getByText("Massage på 2024-09-01")).toBeVisible();
     expect(screen.getByText("Samuel")).toBeVisible();
     expect(screen.getByText("Konsert på 2025-09-02")).toBeVisible();
+    expect(screen.getAllByText("Avboka")).toHaveLength(2);
+  });
+
+  it("should call onCancel when cancel button is clicked", () => {
+    const bookings = [
+      {
+        name: "Sally Stenegärd",
+        date: "2024-09-01",
+        type: "Massage",
+        description: "Helkroppsmassage hos Ewa",
+      },
+    ];
+
+    const handleCancel = vi.fn();
+    render(<BookingList bookings={bookings} onCancel={handleCancel} />);
+
+    fireEvent.click(screen.getByText("Avboka"));
+
+    expect(handleCancel).toHaveBeenCalledTimes(1);
   });
 });

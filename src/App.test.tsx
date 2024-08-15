@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import App from "./App";
 
 describe("BookingForm and BookingList integration", () => {
-  it("should add a new booking to the list when the form is submitted", () => {
+  it("should add a new booking to the list when the form is submitted and then cancel a booking", () => {
     render(<App />);
 
     fireEvent.input(screen.getByPlaceholderText("Namn"), {
@@ -23,8 +23,12 @@ describe("BookingForm and BookingList integration", () => {
       target: { value: "2024-09-01" },
     });
 
-    fireEvent.click(screen.getByRole("button"));
+    fireEvent.click(screen.getByRole("button", { name: /boka/i }));
 
     expect(screen.getByText("Sally Stenegärd")).toBeVisible();
+
+    fireEvent.click(screen.getByText("Avboka"));
+
+    expect(screen.queryByText("Sally Stenegärd")).toBeNull();
   });
 });
