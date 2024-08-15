@@ -12,7 +12,9 @@ describe("BookingForm", () => {
     expect(screen.getByRole("button")).toHaveTextContent("Boka");
   });
 
-  it("should submit the correct booking data"),
+  it(
+    "should submit the correct booking data when all required fields are filled"
+  ),
     () => {
       const handleSubmit = vi.fn();
       render(<BookingForm addBooking={handleSubmit} />);
@@ -31,6 +33,7 @@ describe("BookingForm", () => {
       });
       fireEvent.click(screen.getByRole("button"));
 
+      expect(screen.queryByRole("alert")).toBeNull();
       expect(handleSubmit).toHaveBeenCalledWith({
         name: "Sally Stenegärd",
         date: "2024-09-01",
@@ -38,4 +41,14 @@ describe("BookingForm", () => {
         description: "Helkroppsmassage hos Ewa",
       });
     };
+
+  it("should display an error message if required fields are empty", () => {
+    const handleSubmit = vi.fn();
+    render(<BookingForm addBooking={handleSubmit} />);
+
+    fireEvent.click(screen.getByRole("button"));
+
+    expect(screen.getByText("Alla fält måste fyllas i.")).toBeVisible();
+    expect(handleSubmit).not.toHaveBeenCalled();
+  });
 });

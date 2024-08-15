@@ -16,14 +16,22 @@ export default function BookingForm({ addBooking }: BookingFormProps) {
   const [date, setDate] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!name || !date || !type) {
+      setError("Alla fält måste fyllas i.");
+      return;
+    }
+
     addBooking({ name, date, type, description });
     setName("");
     setDate("");
     setType("");
     setDescription("");
+    setError(null);
   };
 
   return (
@@ -34,13 +42,11 @@ export default function BookingForm({ addBooking }: BookingFormProps) {
           placeholder="Namn"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          required
         />
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          required
           placeholder="Datum"
         />
         <input
@@ -48,7 +54,6 @@ export default function BookingForm({ addBooking }: BookingFormProps) {
           placeholder="Typ av bokning"
           value={type}
           onChange={(e) => setType(e.target.value)}
-          required
         />
         <textarea
           placeholder="Beskrivning"
@@ -57,6 +62,7 @@ export default function BookingForm({ addBooking }: BookingFormProps) {
         />
         <button type="submit">Boka</button>
       </form>
+      {error && <p role="alert">{error}</p>}
     </>
   );
 }
