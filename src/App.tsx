@@ -17,11 +17,16 @@ function Home() {
     setBookings([...bookings, booking]);
   };
 
+  const cancelBooking = (index: number) => {
+    const newBookings = bookings.filter((_, i) => i !== index);
+    setBookings(newBookings);
+  };
+
   return (
     <>
       <h1>Välkommen till bokningarnas möjligheter</h1>
       <BookingForm addBooking={addBoking} />
-      <BookingList bookings={bookings} />
+      <BookingList bookings={bookings} onCancel={cancelBooking} />
     </>
   );
 }

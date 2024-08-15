@@ -1,3 +1,5 @@
+import CancelButton from "./CancelButton";
+
 type Booking = {
   name: string;
   date: string;
@@ -7,9 +9,10 @@ type Booking = {
 
 type BookingListProps = {
   bookings: Booking[];
+  onCancel: (index: number) => void;
 };
 
-export default function BookingList({ bookings }: BookingListProps) {
+export default function BookingList({ bookings, onCancel }: BookingListProps) {
   return (
     <>
       <ul>
@@ -21,6 +24,7 @@ export default function BookingList({ bookings }: BookingListProps) {
             </span>
             <br />
             {booking.description}
+            <CancelButton onCancel={() => onCancel(index)} />
           </li>
         ))}
       </ul>
