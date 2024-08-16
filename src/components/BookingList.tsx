@@ -19,9 +19,9 @@ export default function BookingList({ bookings, onCancel }: BookingListProps) {
         {bookings.map((booking, index) => (
           <li key={index} className="booking-item">
             <div className="booking-details">
-              <strong>{booking.name}</strong> -{" "}
+              <strong>{booking.name}</strong>{" "}
               <span>
-                {booking.type} på {booking.date}
+                {booking.type} - {booking.date}
               </span>
               <br />
               {booking.description}
