@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Enhets &- integrationstestning
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Välkommen till en liten webbapplikation där du kan boka precis vad du önskar!
 
-Currently, two official plugins are available:
+Denna webbapplikation har skapats för en inlämning i kursen _Testning_.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I _src/components_ finner du enhetstesterna för mina 3 komponenter. Integrationstesterna finnes i _src/App.test.tsx_.
 
-## Expanding the ESLint configuration
+## Användning
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+När webbapplikationen är startad kan användaren:
 
-- Configure the top-level `parserOptions` property like this:
+1. Fylla i formuläret för att skapa en ny bokning.
+2. Se bokningslistan uppdateras med sin nya bokning.
+3. Klicka på "Avboka" för att ta bort en bokning från listan.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Kom igång
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+`npm install` för att installera beroenden
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+`npm run dev` för att starta webbapplikationen
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+`npm run test` för att starta testningen
+
+## Verktyg som använts:
+
+- React
+
+- CSS
+
+- Vitest
+- JSDom
+- Testing Library
