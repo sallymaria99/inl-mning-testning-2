@@ -4,6 +4,17 @@ import { describe, expect, it } from "vitest";
 import App from "./App";
 
 describe("BookingForm and BookingList integration", () => {
+  it("should render the welcome heading", () => {
+    render(<App />);
+
+    const headingElement = screen.getByRole("heading", {
+      name: /Välkommen till bokningarnas möjligheter/i,
+    });
+
+    expect(headingElement).toBeVisible();
+    expect(headingElement.tagName).toBe("H1");
+  });
+
   it("should add a new booking to the list when the form is submitted and then cancel a booking", () => {
     render(<App />);
 

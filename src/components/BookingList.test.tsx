@@ -23,9 +23,9 @@ describe("BookingList", () => {
     render(<BookingList bookings={bookings} onCancel={handleCancel} />);
 
     expect(screen.getByText("Sally Stenegärd")).toBeVisible();
-    expect(screen.getByText("Massage på 2024-09-01")).toBeVisible();
+    expect(screen.getByText("Massage - 2024-09-01")).toBeVisible();
     expect(screen.getByText("Samuel")).toBeVisible();
-    expect(screen.getByText("Konsert på 2025-09-02")).toBeVisible();
+    expect(screen.getByText("Konsert - 2025-09-02")).toBeVisible();
     expect(screen.getAllByText("Avboka")).toHaveLength(2);
   });
 

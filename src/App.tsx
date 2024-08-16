@@ -24,7 +24,9 @@ function Home() {
 
   return (
     <>
-      <h1>Välkommen till bokningarnas möjligheter</h1>
+      <h1 className="welcome-heading">
+        Välkommen till bokningarnas möjligheter
+      </h1>
       <BookingForm addBooking={addBoking} />
       <BookingList bookings={bookings} onCancel={cancelBooking} />
     </>

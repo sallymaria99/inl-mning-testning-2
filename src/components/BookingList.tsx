@@ -15,15 +15,17 @@ type BookingListProps = {
 export default function BookingList({ bookings, onCancel }: BookingListProps) {
   return (
     <>
-      <ul>
+      <ul className="booking-list">
         {bookings.map((booking, index) => (
-          <li key={index}>
-            <strong>{booking.name}</strong> -{" "}
-            <span>
-              {booking.type} på {booking.date}
-            </span>
-            <br />
-            {booking.description}
+          <li key={index} className="booking-item">
+            <div className="booking-details">
+              <strong>{booking.name}</strong>{" "}
+              <span>
+                {booking.type} - {booking.date}
+              </span>
+              <br />
+              {booking.description}
+            </div>
             <CancelButton onCancel={() => onCancel(index)} />
           </li>
         ))}
